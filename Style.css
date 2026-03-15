@@ -1,0 +1,208 @@
+/* --- 1. CONFIGURACIÓN GENERAL --- */
+:root {
+    --primary-color: #00bcd4;
+    --dark-bg: #1a1a1a;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.circle { border-radius: 50%; }
+
+/* --- 2. ENCABEZADO (HERO) --- */
+.hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--white);
+    text-align: center;
+    background-color: var(--dark-bg); /* Respaldo oscuro para que el texto se vea siempre */
+}
+
+.video-bg {
+    position: absolute;
+    top: 50%; left: 50%;
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto;
+    z-index: 1; /* El video se queda en la capa base */
+    transform: translate(-50%, -50%);
+    filter: brightness(0.4); 
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10; /* OBLIGATORIO: Pone el texto por encima del video */
+}
+
+.hero-content h1 { font-size: 2.5rem; margin: 0; }
+
+/* --- 3. NAVEGACIÓN INTERACTIVA --- */
+#navbar {
+    background: var(--white);
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: 0.4s ease;
+}
+
+/* Esta clase la activa script.js al hacer scroll */
+#navbar.scrolled {
+    background-color: var(--primary-color);
+}
+
+#navbar.scrolled a, #navbar.scrolled span {
+    color: var(--white);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* --- 4. PORTFOLIO Y SKILLSET (ICONOS CORREGIDOS) --- */
+/* Ajuste de la cuadrícula para que las tarjetas respiren */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Mínimo 300px por tarjeta */
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.project-item {
+    background: #ffffff;
+    padding: 0; 
+    border-radius: 15px;
+    overflow: hidden; /* Para que la foto respete las esquinas redondeadas */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-10px); 
+}
+
+
+.project-item img {
+    width: 100% !important;
+    max-width: none !important; 
+    height: 350px !important; 
+    object-fit: cover !important; 
+    margin: 0;
+}
+
+.project-item h4 {
+    padding: 15px;
+    margin: 0;
+    font-size: 1.2rem;
+    background: white;
+}
+
+/* Control de tamaño para evitar iconos gigantes */
+.icon-item img, .exp-card img, .project-item img {
+    width: 100%;
+    max-width: 120px; /* Tamaño controlado */
+    height: 100px;
+    object-fit: contain; /* No se deforman */
+    margin: 0 auto 10px;
+    display: block;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+}
+/* Asegura que la experiencia se vea en tarjetas y no en lista */
+.exp-grid {
+    display: flex !important; /* Usamos flex para control total */
+    flex-wrap: wrap; /* Si no caben, se pasan abajo */
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.exp-card {
+    background: #ffffff;
+    width: 320px; /* Ancho fijo para que se vean como tarjetas */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.exp-card img {
+    width: 150px !important;
+    height: 100px !important;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* --- 5. CONTACTO --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.social-media {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-media img { width: 35px; margin: 0 10px; }

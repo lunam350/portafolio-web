@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Abel Manuel Luna Meza | Portafolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <video autoplay loop muted class="video-bg">
+            <source src="./Multimedia/Video Headder/174086-850404739_small.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-content">
+            <img class="circle profile-img" src="./Imagenes Portafolio/img/logos/large.png" alt="logo large" />
+            <h1>Portafolio de Abel Manuel Luna Meza</h1>
+            <hr/>
+            <h2>Desarrollador web trainee</h2>
+        </div>
+    </header>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img class="circle" src="./Multimedia/Imagenes/Perfil.jpeg" width="30" height="30" alt="small logo" />
+                <span>Abel Manuel Luna Meza <small>Desarrollador web trainee</small></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#skillset">Skillset</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="portfolio">
+            <h3>Portfolio</h3>
+            <hr/>
+            <div class="project-grid">
+                <button class="project-item">
+                    <img src="./Imagenes Portafolio/img/portfolio/1.jpeg" />
+                    <h4>Niagara Falls 🍁</h4>
+                </button>
+                <button class="project-item">
+                    <img src="./Imagenes Portafolio/img/portfolio/Gemini_Generated_Image_r2ghgor2ghgor2gh.png" />
+                    <h4>Punta Cana 🏖️</h4>
+                </button>
+                <button class="project-item">
+                    <img src="./Imagenes Portafolio/img/portfolio/Paris.jpeg" />
+                    <h4>Paris 🗼</h4>
+                </button>
+            </div>
+        </section>
+
+        <section id="skillset">
+            <h3>Skillset</h3>
+            <hr/>
+            <div class="skill-container">
+                <div class="skill-category">
+                    <h4>Frontend & Diseño</h4>
+                    <div class="icons">
+                        <div class="icon-item"><img src="./Imagenes Portafolio/img/skillset/html.svg"><span>HTML</span></div>
+                        <div class="icon-item"><img src="./Imagenes Portafolio/img/skillset/css.svg"><span>CSS</span></div>
+                        <div class="icon-item"><img src="./Imagenes Portafolio/img/skillset/JSc.png"><span>Javascript</span></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Backend & Datos</h4>
+                    <div class="icons">
+                        <div class="icon-item"><img src="./Imagenes Portafolio/img/skillset/images.png"><span>Java</span></div>
+                        <div class="icon-item"><img src="./Imagenes Portafolio/img/skillset/mysql-5-logo-png-transparent.png"><span>SQL/MySQL</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h3>Experience</h3>
+            <hr/>
+            <div class="exp-grid">
+                <div class="exp-card">
+                    <img src="./Imagenes Portafolio/img/experience/desarrollo.png">
+                    <h4>Frontend Trainee</h4>
+                    <p>2025 - En curso | HTML5, CSS, JavaScript.</p>
+                </div>
+                <div class="exp-card">
+                    <img src="./Imagenes Portafolio/img/experience/UVEG_Logo.jpg">
+                    <h4>Software Development Engineering | UVEG</h4>
+                    <p><strong>2024 - In progress</strong></p>
+                </div>
+                <div class="exp-card">
+                    <img src="./Imagenes Portafolio/img/experience/bbva.avif">
+                    <h4>Senior Banking Executive | BBVA México</h4>
+                    <p><strong>2019-2025</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h3>Contact</h3>
+            <hr/>
+            <form action="https://formspree.io/f/mayvdgwl" method="POST" class="contact-form">
+                <input type="email" name="_replyto" placeholder="Tu email" required/>
+                <textarea name="message" placeholder="Tu mensaje" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/abel-manuel-luna-meza-0614951b8/"><img src="./Imagenes Portafolio/img/social/linkedin.png"/></a>
+                <a href="https://github.com/lunam350"><img src="./Imagenes Portafolio/img/social/github.png"/></a>
+                <a href="https://www.youtube.com/@MykelCode350"><img src="./Imagenes Portafolio/img/social/youtube.png"/></a>
+            </div>
+        </section>
+    </main>
+<script src="script.js"></script>
+
+</body>
+</html>
