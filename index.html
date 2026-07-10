@@ -2,22 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Abel Manuel Luna Meza | Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Abel Manuel Luna Meza | Frontend Developer &amp; QA Automation</title>
+    <meta name="description" content="Portfolio of Abel Manuel Luna Meza — Frontend Developer and Software Engineering student specializing in responsive web development and QA automation with Selenium."/>
+
+    <meta property="og:title" content="Abel Manuel Luna Meza | Frontend Developer & QA Automation"/>
+    <meta property="og:description" content="Frontend Developer and Software Engineering student building clean, responsive interfaces and exploring QA automation."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="./Imagenes Portafolio/img/logos/large.png"/>
+
+    <link rel="icon" type="image/png" href="./Imagenes Portafolio/img/logos/large.png"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
 
+<a href="#home" class="skip-link">Skip to content</a>
+
 <header id="home" class="hero">
-    <video autoplay loop muted class="video-bg">
+    <video autoplay loop muted playsinline class="video-bg">
         <source src="./Multimedia/Video Headder/174086-850404739_small.mp4" type="video/mp4" />
     </video>
 
     <div class="hero-content">
         <img class="circle profile-img" src="./Imagenes Portafolio/img/logos/large.png" alt="Portfolio logo" />
         <h1>Abel Manuel Luna Meza</h1>
-        <hr/>
-        <h2>Frontend Developer | Software Engineering Student</h2>
+        <h2 id="typing-title" class="hero-role"></h2>
+
+        <p class="hero-description">
+            Software Engineering student specializing in Frontend Development, with hands-on
+            experience in QA Automation. I build clean, responsive interfaces and I'm looking
+            for my first opportunity as a Frontend Developer or QA Tester.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#portfolio" class="btn btn-primary">View Projects</a>
+            <a href="./Multimedia/CV/Abel_Luna_CV.pdf" class="btn btn-outline" download>Download CV</a>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number" data-target="2">0</span>
+                <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="6">0</span>
+                <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="1">0</span>
+                <span class="stat-label">Year Learning</span>
+            </div>
+        </div>
     </div>
 </header>
 
@@ -28,7 +68,12 @@
             <span>Abel Manuel Luna Meza <small>Frontend Developer</small></span>
         </a>
 
-        <ul class="nav-links">
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about">About</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#skillset">Skillset</a></li>
             <li><a href="#experience">Experience</a></li>
@@ -39,112 +84,195 @@
 
 <main class="container">
 
-    <section id="portfolio">
-    <h3>Portfolio</h3>
-    <hr/>
+    <section id="about" class="reveal">
+        <h3>About Me</h3>
+        <hr/>
 
-    <div class="project-grid">
+        <div class="about-grid">
+            <img class="about-img" src="./Multimedia/Imagenes/Perfil.jpeg" alt="Abel Manuel Luna Meza" loading="lazy"/>
 
-        <div class="project-item">
-            <img src="./Imagenes Portafolio/img/portfolio/Calculadora IMC.png" alt="Landing Page Gym">
-
-            <h4>Landing Page Gym</h4>
-
-            <p>
-                Responsive landing page for a personal trainer, built with HTML, CSS and JavaScript.
-            </p>
-
-            <div class="project-buttons">
-                <a href="https://lunam350.github.io/fitness-trainer-landing-page/" target="_blank">Live Demo</a>
+            <div class="about-text">
+                <p>
+                    I'm a Software Engineering student focused on Frontend Development, with
+                    additional experience in QA Automation.
+                </p>
+                <ul class="about-list">
+                    <li>Studying Software Engineering at UVEG.</li>
+                    <li>Specializing in Frontend Development with HTML, CSS and JavaScript.</li>
+                    <li>Hands-on knowledge of QA Automation using Selenium and TestNG.</li>
+                    <li>Currently building real projects to strengthen my portfolio.</li>
+                    <li>Looking for my first opportunity as a Frontend Developer or QA Tester.</li>
+                </ul>
             </div>
         </div>
+    </section>
 
-        <div class="project-item">
-            <img src="./Imagenes Portafolio/img/portfolio/Automatizacion.png" alt="Selenium Login Automation">
+    <section id="portfolio" class="reveal">
+        <h3>Portfolio</h3>
+        <hr/>
 
-            <h4>Selenium Login Automation</h4>
-
-            <p>
-                Automated login testing using Java, Selenium WebDriver and TestNG.
-            </p>
-
-            <div class="project-buttons">
-                <a href="https://github.com/lunam350/selenium-login-automation" target="_blank">GitHub</a>
-                <a href="https://youtu.be/UbXfPNWPZKs" target="_blank">Demo</a>
-            </div>
+        <div class="filter-buttons" role="group" aria-label="Filter projects by category">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="frontend">Frontend</button>
+            <button class="filter-btn" data-filter="qa">QA Automation</button>
         </div>
 
-    </div>
-</section>
-    <section id="skillset">
+        <div class="project-grid">
+
+            <div class="project-item" data-category="frontend">
+                <img src="./Imagenes Portafolio/img/portfolio/Calculadora IMC.png" alt="Landing Page Gym project screenshot" loading="lazy">
+
+                <div class="project-info">
+                    <h4>Landing Page Gym</h4>
+                    <p>Responsive landing page for a personal trainer, focused on a clean layout and mobile-first design.</p>
+                    <div class="tech-tags">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://lunam350.github.io/fitness-trainer-landing-page/" target="_blank" rel="noopener" aria-label="View Landing Page Gym live demo">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" data-category="qa">
+                <img src="./Imagenes Portafolio/img/portfolio/Automatizacion.png" alt="Selenium Login Automation project screenshot" loading="lazy">
+
+                <div class="project-info">
+                    <h4>Selenium Login Automation</h4>
+                    <p>Automated login test suite built with Java, Selenium WebDriver and TestNG.</p>
+                    <div class="tech-tags">
+                        <span>Java</span><span>Selenium</span><span>TestNG</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://github.com/lunam350/selenium-login-automation" target="_blank" rel="noopener" aria-label="View Selenium Login Automation source on GitHub">GitHub</a>
+                        <a href="https://youtu.be/UbXfPNWPZKs" target="_blank" rel="noopener" aria-label="Watch Selenium Login Automation demo video">Video Demo</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skillset" class="reveal">
         <h3>Skillset</h3>
         <hr/>
 
         <div class="skill-container">
             <div class="skill-category">
                 <h4>Frontend Development</h4>
-                <div class="icons">
-                    <div class="icon-item"><img src="./Imagenes Portafolio/img/skillset/html.svg" alt="HTML"><span>HTML</span></div>
-                    <div class="icon-item"><img src="./Imagenes Portafolio/img/skillset/css.svg" alt="CSS"><span>CSS</span></div>
-                    <div class="icon-item"><img src="./Imagenes Portafolio/img/skillset/JSc.png" alt="JavaScript"><span>JavaScript</span></div>
+                <div class="skill-cards">
+                    <div class="skill-card">
+                        <img src="./Imagenes Portafolio/img/skillset/html.svg" alt="HTML" loading="lazy">
+                        <span class="skill-name">HTML</span>
+                        <span class="skill-subtitle">Semantic HTML</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="./Imagenes Portafolio/img/skillset/css.svg" alt="CSS" loading="lazy">
+                        <span class="skill-name">CSS</span>
+                        <span class="skill-subtitle">Responsive Design</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="./Imagenes Portafolio/img/skillset/JSc.png" alt="JavaScript" loading="lazy">
+                        <span class="skill-name">JavaScript</span>
+                        <span class="skill-subtitle">DOM Manipulation</span>
+                    </div>
                 </div>
             </div>
 
             <div class="skill-category">
-                <h4>Software & QA</h4>
-                <div class="icons">
-                    <div class="icon-item"><img src="./Imagenes Portafolio/img/skillset/images.png" alt="Java"><span>Java</span></div>
-                    <div class="icon-item"><img src="./Imagenes Portafolio/img/skillset/mysql-5-logo-png-transparent.png" alt="SQL"><span>SQL/MySQL</span></div>
-                    <div class="icon-item"><img src="./Imagenes Portafolio/img/skillset/selenium.png" alt="SQL"><span>Selenium</span></div>
-                    <div class="icon-item"><img src="./Imagenes Portafolio/img/skillset/test.png" alt="SQL"><span>TestNG</span></div>
+                <h4>Software &amp; QA</h4>
+                <div class="skill-cards">
+                    <div class="skill-card">
+                        <img src="./Imagenes Portafolio/img/skillset/images.png" alt="Java" loading="lazy">
+                        <span class="skill-name">Java</span>
+                        <span class="skill-subtitle">Object Oriented Programming</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="./Imagenes Portafolio/img/skillset/mysql-5-logo-png-transparent.png" alt="SQL / MySQL" loading="lazy">
+                        <span class="skill-name">SQL / MySQL</span>
+                        <span class="skill-subtitle">Relational Databases</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="./Imagenes Portafolio/img/skillset/selenium.png" alt="Selenium" loading="lazy">
+                        <span class="skill-name">Selenium</span>
+                        <span class="skill-subtitle">Web Automation</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="./Imagenes Portafolio/img/skillset/test.png" alt="TestNG" loading="lazy">
+                        <span class="skill-name">TestNG</span>
+                        <span class="skill-subtitle">Testing Framework</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="reveal">
         <h3>Experience</h3>
         <hr/>
 
-        <div class="exp-grid">
-            <div class="exp-card">
-                <img src="./Imagenes Portafolio/img/experience/desarrollo.png" alt="Frontend Development">
-                <h4>Frontend Developer Trainee</h4>
-                <p>2025 - Present | HTML, CSS, JavaScript.</p>
-            </div>
+        <ul class="timeline">
+            <li class="timeline-item">
+                <img src="./Imagenes Portafolio/img/experience/desarrollo.png" alt="Frontend Development" loading="lazy">
+                <div class="timeline-content">
+                    <span class="timeline-date">2025 &ndash; Present</span>
+                    <h4>Frontend Developer Trainee</h4>
+                    <p>HTML, CSS, JavaScript.</p>
+                </div>
+            </li>
 
-            <div class="exp-card">
-                <img src="./Imagenes Portafolio/img/experience/UVEG_Logo.jpg" alt="UVEG">
-                <h4>Software Engineering Student | UVEG</h4>
-                <p><strong>2024 - Present</strong></p>
-            </div>
+            <li class="timeline-item">
+                <img src="./Imagenes Portafolio/img/experience/UVEG_Logo.jpg" alt="UVEG" loading="lazy">
+                <div class="timeline-content">
+                    <span class="timeline-date">2024 &ndash; Present</span>
+                    <h4>Software Engineering Student | UVEG</h4>
+                    <p>Ongoing coursework in software development and engineering fundamentals.</p>
+                </div>
+            </li>
 
-            <div class="exp-card">
-                <img src="./Imagenes Portafolio/img/experience/bbva.avif" alt="BBVA México">
-                <h4>Senior Banking Executive | BBVA México</h4>
-                <p><strong>2019 - 2025</strong></p>
-            </div>
-        </div>
+            <li class="timeline-item">
+                <img src="./Imagenes Portafolio/img/experience/bbva.avif" alt="BBVA México" loading="lazy">
+                <div class="timeline-content">
+                    <span class="timeline-date">2019 &ndash; 2025</span>
+                    <h4>Senior Banking Executive | BBVA México</h4>
+                    <p>Client-facing experience that built strong communication and problem-solving skills, now applied to software development.</p>
+                </div>
+            </li>
+        </ul>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="reveal">
         <h3>Contact</h3>
         <hr/>
 
+        <p class="contact-intro">
+            Currently open to internship and junior opportunities in Frontend Development and QA Automation.
+        </p>
+
         <form action="https://formspree.io/f/mayvdgwl" method="POST" class="contact-form">
-            <input type="email" name="_replyto" placeholder="Your email" required/>
-            <textarea name="message" placeholder="Your message" required></textarea>
-            <button type="submit">Send</button>
+            <label class="visually-hidden" for="contact-email">Your email</label>
+            <input id="contact-email" type="email" name="_replyto" placeholder="Your email" required/>
+
+            <label class="visually-hidden" for="contact-message">Your message</label>
+            <textarea id="contact-message" name="message" placeholder="Your message" required></textarea>
+
+            <button type="submit">Send Message</button>
         </form>
 
         <div class="social-media">
-            <a href="https://www.linkedin.com/in/abel-manuel-luna-meza-0614951b8/" target="_blank"><img src="./Imagenes Portafolio/img/social/linkedin.png" alt="LinkedIn"/></a>
-            <a href="https://github.com/lunam350" target="_blank"><img src="./Imagenes Portafolio/img/social/github.png" alt="GitHub"/></a>
-            <a href="https://www.youtube.com/@MykelCode350" target="_blank"><img src="./Imagenes Portafolio/img/social/youtube.png" alt="YouTube"/></a>
+            <a href="https://www.linkedin.com/in/abel-manuel-luna-meza-0614951b8/" target="_blank" rel="noopener" aria-label="Abel's LinkedIn profile"><img src="./Imagenes Portafolio/img/social/linkedin.png" alt="" loading="lazy"/></a>
+            <a href="https://github.com/lunam350" target="_blank" rel="noopener" aria-label="Abel's GitHub profile"><img src="./Imagenes Portafolio/img/social/github.png" alt="" loading="lazy"/></a>
+            <a href="https://www.youtube.com/@MykelCode350" target="_blank" rel="noopener" aria-label="Abel's YouTube channel"><img src="./Imagenes Portafolio/img/social/youtube.png" alt="" loading="lazy"/></a>
         </div>
     </section>
 
 </main>
+
+<footer class="site-footer">
+    <p>&copy; 2026 Abel Manuel Luna Meza. All rights reserved.</p>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top">&uarr;</button>
 
 <script src="script.js"></script>
 </body>
