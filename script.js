@@ -82,7 +82,7 @@ sections.forEach((section) => activeLinkObserver.observe(section));
    5. EFECTO DE ESCRITURA (TYPING EFFECT) EN EL HERO
    ========================================================= */
 const typingTarget = document.getElementById('typing-title');
-const typingText = 'Frontend Developer | Software Engineering Student';
+const typingText = 'Junior Software Developer | Frontend, PHP/Laravel & QA';
 
 if (typingTarget) {
     let index = 0;
